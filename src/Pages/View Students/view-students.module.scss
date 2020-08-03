@@ -7,6 +7,10 @@
 .h2{
     font-size: 1rem;
 }
+.h3{
+    font-size: .9rem;
+    font-weight: 300;
+}
 
 // - - - - - - - - 
 .screen {
@@ -61,7 +65,7 @@
     -webkit-box-shadow: $box-shadow;
     -moz-box-shadow: $box-shadow;
     box-shadow: $box-shadow;
-    
+    cursor: pointer;
     
     .studentTable{
         display: grid;

@@ -2,13 +2,23 @@ import React, {useState} from "react";
 import Styles from "./view-students.module.scss";
 
 import Dashboard from "../../Components/dashboard/dashboard.components"
+import ViewStudentModal from "../../Components/View-Students-Modal/view-students-modal";
 
 const ViewStudentsPage = () => {
   const [studentNames, setStudentNames] = useState([])
+  const [selectedStudent, setSelectedStudent] = useState()
+  const [modalState, setModalaState] = useState(false)
   const [yearLevel, setYearLevel] = useState({
       yearLevel: ""
   })
   
+  //ASSIGNS STUDENT DATA TO MODAL WHEN USER CLICKS ON NAME OF STUDENT
+  const selectStudent = (el) =>{
+    setModalaState(true)
+    setSelectedStudent(el)
+  }
+  
+  //CHANGES VALUES FOR SELECT
   const onSelect = (e) =>{
       setYearLevel({
          yearLevel: e.target.value
@@ -40,6 +50,7 @@ const ViewStudentsPage = () => {
   }
   return (
     <div className={Styles.screen}>
+        {modalState ? <ViewStudentModal studentData={selectedStudent} modalToggle={setModalaState} /> : null}
       <div className={Styles.inner}>
         <Dashboard />
         <div className={Styles.rightContainer}>
@@ -63,10 +74,10 @@ const ViewStudentsPage = () => {
                 </div>
                 {studentNames.map( (el,index) => {
                     return(
-                        <div className={Styles.studentTable}>
-                            <h2 className={Styles.h2}>{el.name}</h2>
-                            <h2 className={Styles.h2}>{el.email}</h2>
-                            <h2 className={Styles.h2}>{el.gender}</h2>
+                        <div onClick={() => selectStudent(el)} key={index} className={Styles.studentTable}>
+                            <h3 className={Styles.h3}>{el.name}</h3>
+                            <h3 className={Styles.h3}>{el.email}</h3>
+                            <h3 className={Styles.h3}>{el.gender}</h3>
                         </div>
                          
                     )
