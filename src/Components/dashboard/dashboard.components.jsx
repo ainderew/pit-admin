@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 import {nameHandler} from "../../utilities"
 import Styles from "./dashboard.module.scss";
 
-import studentImg from "../../Assets/Andrew.jpg"
+import studentImg from "../../Assets/default_user.png"
 
 const Dashboard = () =>{
     const userData = useSelector(state => state.userData)
@@ -27,8 +27,8 @@ const Dashboard = () =>{
                         <Link to = "/createClass">
                             <li className={Styles.li}>Create Class</li>
                         </Link >
-                        <Link to = "/LoggedEnrollment">
-                            <li className={Styles.li}>Search Student</li>
+                        <Link to = "/viewStudents">
+                            <li className={Styles.li}>View Students</li>
                         </Link>
                         <Link to = "/LoggedEnrollment">
                             <li className={Styles.li}>Enrollment</li>

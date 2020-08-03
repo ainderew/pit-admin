@@ -6,6 +6,8 @@ import "../../scss_variables/global.styles.scss";
 //COMPONENTS
 import LoginPage from "../Login-page/login-page.component";
 import CreateClassPage from "../Create-class-page/create-class.component"
+import CreateTeacher from "../Create-Teacher-page/create-teacher.component"
+import ViewStudentsPage from "../View Students/view-students.components"
 import HomePage from "../Home-page/home-page.components";
 import ProspectusPage from "../Prospectus-page/prospectus-page.component";
 import Header from "../../Components/header/header.component";
@@ -20,6 +22,8 @@ const MainContainer = () => {
         <Switch>
           <Route exact path="/" component={LoginPage} />
           <Route exact path="/createClass" component={CreateClassPage} />
+          <Route exact path="/createTeacher" component={CreateTeacher} />
+          <Route exact path="/viewStudents" component={ViewStudentsPage} />
           <Route exact path="/home" component={(Object.entries(userData).length === 0) ? LoginPage : HomePage} />
           <Route exact path="/prospectus" component={(Object.entries(userData).length === 0) ? LoginPage : ProspectusPage} />
         </Switch>

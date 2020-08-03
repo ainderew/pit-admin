@@ -1,0 +1,71 @@
+@import "../../scss_variables/colors";
+// COMMON CLASSES ====================
+
+.h1{
+    font-size: 1rem;
+}
+.h2{
+    font-size: 1rem;
+}
+
+// - - - - - - - - 
+.screen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: $background-color;
+}
+
+.inner {
+  width: 80vw;
+  height: calc(100vh - 5rem);
+
+  display: grid;
+  grid-template-columns: 13rem 1fr;
+}
+
+.rightContainer {
+  grid-column: 2/3;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 4rem;
+}
+
+.selectYearLevelContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 2rem;
+  background: white;
+  -webkit-box-shadow: $box-shadow;
+  -moz-box-shadow: $box-shadow;
+  box-shadow: $box-shadow;
+
+  .select {
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
+
+.studentListContainer{
+    width: 100%;
+    margin-top: 2rem;
+    padding: 2rem;
+    background: white;
+    -webkit-box-shadow: $box-shadow;
+    -moz-box-shadow: $box-shadow;
+    box-shadow: $box-shadow;
+    
+    
+    .studentTable{
+        display: grid;
+        grid-template-columns: 35% 50% 15%;
+        margin-top: 2rem;
+    }
+}

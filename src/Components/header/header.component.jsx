@@ -5,7 +5,7 @@ import {useSelector} from "react-redux"
 import Styles from "./header.module.scss";
 
 import Logo from "../../Assets/logo.png"
-import StudentPhoto from "../../Assets/Andrew.jpg"
+import StudentPhoto from "../../Assets/default_user.png"
 
 const Header = () =>{
     const userData = useSelector(state => state.userData)
